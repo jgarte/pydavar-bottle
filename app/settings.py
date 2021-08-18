@@ -1,5 +1,6 @@
 #!/usr/bin/python
-
-
-BASE_DIR = "/home/martin/Projects/PyDavar_Bottle"
+import os
+loc = os.getcwd()
+print(loc)
+BASE_DIR = loc
 
