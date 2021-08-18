@@ -3,12 +3,15 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Search for word</title>
+		<link href="./static/css/index.css" rel="stylesheet" />
+		<script src="./static/js/latin_hebrew_script.js"></script>
 	</head>
-	<body>
+	<body onload="init()">
 		<h1>Index</h1>
-		<form action="./search">
-			<input type="text" id="string" name="string" />
-			<input type="submit" value="search" />
+		<form action="./xearch" method="get" target="show_search">
+			<input type="text" id="search" name="s" />
+			<input type="submit" value="search" target="show_search" />
 		</form>
+		<embed name="show_search"></embed>
 	</body>
 </html>

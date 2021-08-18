@@ -4,7 +4,7 @@ import os
 from settings import BASE_DIR
 from search import search
 
-@get('/static/<filepath>')
+@get('/static/<filepath:path>')
 def g_static(filepath):
     return static_file(filepath, root=os.path.join(BASE_DIR, "statics"))
 
@@ -16,10 +16,21 @@ def r_index():
 def r_search():
     r = request.query.decode()
     print(r)
-    string = r['string']
+    string = r['s']
     dict_file = "dicts/cz_he.txt.json"
     result = search(dict_file, string)
-    return result
+    return template(os.path.join(BASE_DIR, "templates/t_search_result.html"), {'result': result})
+
+@route('/xearch')
+def r_xearch():
+    r = request.query.decode()
+    print(r)
+    string = r['s']
+    dict_file = "dicts/cz_he.txt.json"
+    result = search(dict_file, string)
+    return template(os.path.join(BASE_DIR, "templates/t_search_result_table.html"), {'result': result})
+
+
 
 # main() runs run :D
 def main(*args):
