@@ -17,7 +17,7 @@ def r_search():
     r = request.query.decode()
     print(r)
     string = r['s']
-    dict_file = "dicts/cz_he.txt.json"
+    dict_file = "dicts/cz_he.json"
     result = search(dict_file, string)
     return template(os.path.join(BASE_DIR, "templates/t_search_result.html"), {'result': result})
 
@@ -26,7 +26,7 @@ def r_xearch():
     r = request.query.decode()
     print(r)
     string = r['s']
-    dict_file = "dicts/cz_he.txt.json"
+    dict_file = "dicts/cz_he.json"
     result = search(dict_file, string)
     return template(os.path.join(BASE_DIR, "templates/t_search_result_table.html"), {'result': result})
 

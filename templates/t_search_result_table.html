@@ -1,9 +1,9 @@
 <table class="t-result">
-%for k, v in result.items():
+%for xkey, (key, value, note) in result:
 	<tr>
-		<td class="note">{{v[2]}}</td>
-		<td class="value">{{v[1]}}</td>
-		<td class="key">{{v[0]}}</td>
+		<td class="note">{{note}}</td>
+		<td class="value">{{value}}</td>
+		<td class="key">{{key}}</td>
 	</tr>
 %end
 </table>
