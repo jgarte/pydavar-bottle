@@ -1,0 +1,6 @@
+beautifulsoup4==4.9.3
+bottle==0.12.19
+bs4==0.0.1
+python-hebrew-numbers==0.2.3
+PyYAML==5.4.1
+soupsieve==2.2.1
