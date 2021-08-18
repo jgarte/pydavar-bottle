@@ -1,0 +1,16 @@
+@font-face{
+	src: url('./Shlomo.ttf');
+	font-family: 'x-shlomo';
+}
+
+@font-face{
+	src: url('./cmunorm.ttf');
+	font-family: 'x-concrete';
+	font-weight: normal;
+}
+
+@font-face{
+	src: url('./cmunobx.ttf');
+	font-family: 'x-concrete';
+	font-weight: normal;
+}

@@ -1,3 +1,13 @@
-form #search{
+body{
+	font-family: 'x-concrete';
+}
+
+#search{
 	direction: rtl;
+}
+
+#response{
+	margin-top: 1em;
+	width: 100%;
+	border-top: 1px solid silver;
 }

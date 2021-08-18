@@ -2,16 +2,40 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Search for word</title>
+		
+		<link href="./static/fonts/fonts.css" rel="stylesheet" />
 		<link href="./static/css/index.css" rel="stylesheet" />
+		<link href="./static/css/result.css" rel="stylesheet" />
 		<script src="./static/js/latin_hebrew_script.js"></script>
 	</head>
 	<body onload="init()">
-		<h1>Index</h1>
-		<form action="./xearch" method="get" target="show_search">
-			<input type="text" id="search" name="s" />
-			<input type="submit" value="search" target="show_search" />
-		</form>
-		<embed name="show_search"></embed>
+		<h1>Search</h1>
+		<script defer="defer">
+			function sendRequest(url, key, value){
+			console.log("value", value)
+			if(value.length !== 0){
+				var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+					      if (this.readyState == 4 && this.status == 200) {
+						document.getElementById('response').innerHTML = xhttp.responseText;	
+					      }
+					    };
+				  all_url = url+"?"+key+"="+value
+				  console.log(all_url)
+				  xhttp.open("GET", all_url, true);
+				  xhttp.send();
+			}}
+
+			function submit(){
+				sendRequest('./xearch', 's', document.getElementById('search').value);
+				}
+		</script>
+
+		<input type="text" autocomplete="off" id="search" name="s" />
+		<input type="button" value="search" onclick="submit()" />
+		<div id="response"></div>
+
 	</body>
 </html>

@@ -1,20 +1,25 @@
 function trans(string){
 
-	let letters_he = "אבגדהוזחטיכלמנסעפצקרשת"
-	let letters_la = "xbgdhvzHTjklmnsypcqrwt"
+	        let letters_he = "אבגדהוזחטיכלמנסעפצקרשת"+" ־"+"׳"+'״'
+	        let letters_la = "xbgdhvzHTjklmnsypcqrwt"+" -"+"'"+'"'
+	        
+	        let concatenated = letters_he.concat(letters_la).concat(" ")
+	        
+	        let trimmer = RegExp("[^"+concatenated+"]", "g")
 
-	for(let i in letters_he){
-		x = letters_he[i];
-		y = letters_la[i];
+	        for(let i in letters_he){
+			                x = letters_he[i];
+			                y = letters_la[i];
 
-		r = new RegExp(y, 'g');
-		
-		string = string.replace(r, x);
+			                r = new RegExp(y, 'g');
 
-	}
-	
-	return string
+			                string = string.replace(r, x);
+
+			        }
+
+	        return string.replace(trimmer, "")
 }
+
 
 function init(){
 	let input = document.getElementById("search");
